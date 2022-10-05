@@ -1,4 +1,4 @@
-var URI = "http://hp-api.herokuapp.com/api/characters";
+var URI = "https://hp-api.herokuapp.com/api/characters";
 
 let contenedor = document.getElementById("contenedor");
 let personajes = [];
