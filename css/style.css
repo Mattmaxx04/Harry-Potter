@@ -128,11 +128,9 @@ footer{
 }
 
 /*---------------not found-----------------*/
-
 .wrapper {
-    margin-top: 3rem;
     font-size: 16px;
-    background-color: #73bef1;
+    background-color: #5cbeff;
     height: 31.25em;
     width: 31.25em;
     position: absolute;
