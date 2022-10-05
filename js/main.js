@@ -3,12 +3,13 @@ var URI = "http://hp-api.herokuapp.com/api/characters";
 let contenedor = document.getElementById("contenedor");
 let personajes = [];
 let formulario = document.querySelector("form");
-let div = document.createElement("div") 
+
 
 /*-------------funcion not found------------------*/
 function notFound(){  
-     
-  div.innerHTML = `<img src="./assets/snape.gif" class="img__notfound" alt="...">`;
+  let div = document.createElement("div") 
+  div.innerHTML = `<img src="./assets/logohow.jpg" class="img__notfound" alt="...">
+  <p class="card-text">algo</p>`
   contenedor.appendChild(div);
 }
 /*------------- FIN funcion not found------------------*/
@@ -24,7 +25,7 @@ function pintarCards(arrayPersonajes) {
     card.innerHTML = `<img src="${personaje.image}" class="card-img-top card__image" alt="...">
         <div class="card-body">
           <h2 class="card-title">${personaje.name}</h2>
-          <p class="card-text">algo</p>          
+          <h3 class="card-text">House:${personaje.house}</h3>          
         </div>`;
     contenedor.appendChild(card);
   });
