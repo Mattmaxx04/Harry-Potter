@@ -11,36 +11,36 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <title>Harry Potter</title>
 </head>
-<body>
-    <header>
-        <nav class="navbar">
-            <div class="container d-flex nav">
-              <a class="navbar-brand" href="#">
-                <img src="./assets/hp.png" alt="harry" >
-              </a>
-            </div>
-          </nav>
-    </header>
+<body>    
     <main>
+      
       <form class="d-flex flex-wrap" id="checks__search">
-
+        <img class="logo" src="./assets/hp.png" alt="harry" >
         <div class="divform">
-          <div class= "form-check form-switch d-flex" id="escudos">
+          <div class= "form-check form-switch" id="escudos">
             <div class="escudos">
+              <label class="form__label" for="gryffindor">
               <input hidden class="form-check-input" type="checkbox" role="switch" id="gryffindor" value="gryffindor">
-              <label class="form__label" for="gryffindor"> <img class="img__escudos" src="./assets/gryffindor.png" alt="" srcset=""> </label>
+               <img class="img__escudos gryffindor" src="./assets/gryffindor.png" alt="" srcset=""> 
+              </label>
             </div>
             <div class="escudos">
+              <label class="form__label" for="slytherin">
               <input hidden class="form-check-input" type="checkbox" role="switch" id="slytherin" value="slytherin">
-              <label class="form__label" for="slytherin"> <img class="img__escudos" src="./assets/slytherin.png" alt="" srcset=""> </label>
+               <img class="img__escudos slytherin" src="./assets/slytherin.png" alt="" srcset=""> 
+              </label>
             </div>
             <div class="escudos">
+              <label class="form__label" for="ravenclaw"> 
               <input hidden class="form-check-input" type="checkbox" role="switch" id="ravenclaw" value="ravenclaw">
-              <label class="form__label" for="ravenclaw"> <img class="img__escudos" src="./assets/ravenclaw.png" alt="" srcset=""> </label>
+              <img class="img__escudos ravenclaw" src="./assets/ravenclaw.png" alt="" srcset="">
+             </label>
             </div>
             <div class="escudos">
+              <label class="form__label" for="hufflepuff"> 
               <input hidden class="form-check-input" type="checkbox" role="switch" id="hufflepuff" value="hufflepuff">
-              <label class="form__label" for="hufflepuff"> <img class="img__escudos" src="./assets/hufflepuff.png" alt="" srcset=""> </label>
+              <img class="img__escudos hufflepuff" src="./assets/hufflepuff.png" alt="" srcset=""> 
+            </label>
             </div>           
           </div>
         </div> 
