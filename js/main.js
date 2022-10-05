@@ -3,6 +3,7 @@ var URI = "https://hp-api.herokuapp.com/api/characters";
 let contenedor = document.getElementById("contenedor");
 let personajes = [];
 let formulario = document.querySelector("form");
+
 /*
 const toggleTheme = document.getElementById('toggle-theme');
 const toggleIcon = document.getElementById('toggle-icon');
@@ -20,17 +21,17 @@ toggleTheme.addEventListener('click', () => {
 });
 */
 
-/*-------------funcion TOGGLE ESCUDOS------------------*/
+/*-------------funcion TOGGLE ESCUDOS------------------
 const toggleSly = document.getElementById("ravenclawToggle");
 const toggleIconSly = document.getElementById("toggleIconSly");
 
 toggleSly.addEventListener("click", () => {
   if (toggleIconSly.src.includes("ravenclaw")) {
-    toggleIconSly.src.replace("./assets/ravglow.png");
+    toggleIconSly.src = "./assets/ravglow.png";
   } else {
     toggleIconSly.src = "assets/ravenclaw.png";
   }
-});
+});*/
 
 /*------------- FIN funcion TOGGLE ESCUDOS------------------*/
 
@@ -44,10 +45,19 @@ function pintarCards(arrayPersonajes) {
   } else {
     div.innerHTML = "";
     arrayPersonajes.forEach((personaje) => {
+      let imagen = imagenDefecto()
+      function imagenDefecto(){
+        if (personaje.image == "" ){
+          return "../assets/dementor.png"
+        }else{ 
+          return personaje.image
+        }
+      }
+      console.log(personaje.image)
       let card = document.createElement("div");
       card.className = "card p-0 bg-dark text-light";
       card.style.width = "20rem";
-      card.innerHTML = `<img src="${personaje.image}" class="card-img-top card__image" alt="...">
+      card.innerHTML = `<img src="${imagen}" class="card-img-top card__image" alt="...">
         <div class="card-body">
           <h2 class="card-title">${personaje.name}</h2>
           <h3 class="card-text">House:${personaje.house}</h3>          
@@ -58,38 +68,31 @@ function pintarCards(arrayPersonajes) {
 }
 /*------------- FIN pintarcards------------------*/
 
+
+
+/*------------- Funcion Fetch------------------*/
 function traerDatos(url) {
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
-      personajes = data;
-      let filtro1 = filtrarPorImagenes(personajes);
-      pintarCards(filtro1);
+      personajes = data;;
+      pintarCards(personajes);
     });
 }
+/*------------- Fin funcion Fetch------------------*/
 
-function filtrarPorImagenes(arrayPersonajes) {
-  let filtro = [];
-  arrayPersonajes.filter((personaje) => {
-    if (!personaje.image == "") {
-      filtro.push(personaje);
-    }
-  });
-  return filtro;
-}
-
+/*-------------Filtrar por casa------------------*/
 formulario.addEventListener("click", () => {
   superFiltro();
 });
 
 function filtrarPorCasa(arrayPersonajes) {
-  let filtro1 = filtrarPorImagenes(arrayPersonajes);
   let checkBoxes = document.querySelectorAll('input[type="checkbox"]');
   let arrayCheckBoxes = Array.from(checkBoxes);
   let inputCheckers = arrayCheckBoxes.filter((checkBox) => checkBox.checked);
   let valueCheckers = inputCheckers.map((input) => input.value.toLowerCase());
   let filtro = [];
-  filtro1.filter((personaje) => {
+  arrayPersonajes.filter((personaje) => {
     valueCheckers.forEach((house) => {
       if (house == personaje.house.toLowerCase()) {
         filtro.push(personaje);
@@ -102,7 +105,7 @@ function filtrarPorCasa(arrayPersonajes) {
   return filtro;
 }
 
-/*-------------search------------------*/
+/*-------------filtro por search------------------*/
 let searcher = document.getElementById("searchbox");
 
 searcher.addEventListener("keyup", () => {
@@ -110,10 +113,9 @@ searcher.addEventListener("keyup", () => {
 });
 
 function search(arrayPersonajes) {
-  let filtro1 = filtrarPorImagenes(arrayPersonajes);
   let palabras = searcher.value;
 
-  let personajeFiltrado = filtro1.filter((personaje) =>
+  let personajeFiltrado = arrayPersonajes.filter((personaje) =>
     personaje.name.toLowerCase().includes(palabras.toLowerCase())
   );
 
