@@ -11,6 +11,27 @@ body{
 cursor: url(../assets/huf.png), auto;
 width:8rem;
 }
+
+input[type=checkbox]:checked ~ .hufflepuff{
+  
+  filter:
+  drop-shadow(0 0 1rem #f1ed1c);
+}
+input[type=checkbox]:checked ~ .ravenclaw{
+  
+  filter:
+  drop-shadow(0 0 1rem #1ccaf1);
+}
+input[type=checkbox]:checked ~ .slytherin{
+  
+  filter:
+  drop-shadow(0 0 1rem #21ec24);
+}
+input[type=checkbox]:checked ~ .gryffindor{
+  
+  filter:
+  drop-shadow(0 0 1rem #f12a1c);
+}
 .ravenclaw{
     cursor: url(../assets/rav.png), auto;
     width:8rem;
@@ -59,7 +80,7 @@ p{
 
 main{
     cursor: url(../assets/varita.png), auto;
-    background-color:#eeba30 ;
+    background-color:#53524e ;
     min-height: 95vh;
     min-width: 100vw;   
     padding: 1rem;
@@ -91,7 +112,7 @@ main{
 }
 
 .card:is(:hover, :focus){
-  filter: grayscale(0%)
+  filter: grayscale(0%);
 }
 
 .search{
@@ -117,6 +138,7 @@ form{
 }
 
 .escudos{
+  
     margin:0.5rem;
 }
 
@@ -130,7 +152,7 @@ label{
     width:5rem;
 }
 footer{
-    background-color:#eeba30 ;
+    background-color:#53524e ;
     min-height:5vh;
     border: 0.1rem solid #AE0001;
     cursor: url(../assets/varita.png), auto;
