@@ -6,17 +6,13 @@ let formulario = document.querySelector("form");
 
 
 /*-------------funcion not found------------------*/
-function notFound(){  
-  let div = document.createElement("div") 
-  div.innerHTML = `<img src="./assets/logohow.jpg" class="img__notfound" alt="...">
-  <p class="card-text">algo</p>`
-  contenedor.appendChild(div);
-}
+
 /*------------- FIN funcion not found------------------*/
 traerDatos(URI);
 
 /*-------------pintarcards------------------*/
 function pintarCards(arrayPersonajes) {
+
   contenedor.innerHTML = "";
   arrayPersonajes.forEach((personaje) => {
     let card = document.createElement("div");
@@ -101,10 +97,47 @@ function search(arrayPersonajes) {
 function superFiltro(){ 
   let filtroCasa = filtrarPorCasa(personajes);
   let filtradoTexto = search(filtroCasa); 
+  console.log(filtradoTexto);
   if (!filtradoTexto.length){
+    
     notFound()
   }
   pintarCards(filtradoTexto)
 
 }
 /*------------- FIN super filtro------------------*/
+
+/*------------- funcion not found------------------*/
+let notFoundDiv = document.getElementById("notFound")
+let div = document.createElement("div") 
+function notFound(){  
+  
+  div.innerHTML = ""
+  div.innerHTML = `<div class="wrapper">  
+  <div class="cloud cloud-1"></div>
+  <div class="cloud cloud-2"></div>
+  <div class="cloud cloud-3"></div>
+  <div class="cloud cloud-4"></div>
+  <div class="containerharry">
+  <h5>can't find what you're looking for?</h5>
+    <div class="broom"></div>
+    <div class="harry">
+      <div class="cloak"></div>
+      <div class="leg"></div>
+      <div class="face">
+        <div class="hair-1"></div>
+        <div class="hair-2"></div>
+        <div class="hair-3"></div>
+        <div class="glasses"></div>
+        <div class="eye"></div>
+        <div class="scar"></div>
+        <div class="mouth"></div>
+        
+      </div>
+    </div>
+    
+  </div>
+ 
+</div>`
+  notFoundDiv.appendChild(div);
+}
