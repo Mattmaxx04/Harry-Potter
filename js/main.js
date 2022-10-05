@@ -12,8 +12,12 @@ traerDatos(URI);
 
 /*-------------pintarcards------------------*/
 function pintarCards(arrayPersonajes) {
-
   contenedor.innerHTML = "";
+  if (!arrayPersonajes.length){
+    
+    notFound()
+  }else{
+  div.innerHTML =""    
   arrayPersonajes.forEach((personaje) => {
     let card = document.createElement("div");
     card.className = "card p-0 bg-dark text-light";
@@ -25,6 +29,7 @@ function pintarCards(arrayPersonajes) {
         </div>`;
     contenedor.appendChild(card);
   });
+}
 }
 /*------------- FIN pintarcards------------------*/
 
@@ -96,23 +101,17 @@ function search(arrayPersonajes) {
 
 function superFiltro(){ 
   let filtroCasa = filtrarPorCasa(personajes);
-  let filtradoTexto = search(filtroCasa); 
-  console.log(filtradoTexto);
-  if (!filtradoTexto.length){
-    
-    notFound()
-  }
+  let filtradoTexto = search(filtroCasa);   
   pintarCards(filtradoTexto)
-
 }
 /*------------- FIN super filtro------------------*/
 
 /*------------- funcion not found------------------*/
 let notFoundDiv = document.getElementById("notFound")
 let div = document.createElement("div") 
+
 function notFound(){  
   
-  div.innerHTML = ""
   div.innerHTML = `<div class="wrapper">  
   <div class="cloud cloud-1"></div>
   <div class="cloud cloud-2"></div>
