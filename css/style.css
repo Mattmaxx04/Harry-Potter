@@ -23,6 +23,8 @@ width:8rem;
     cursor: url(../assets/glif.png), auto;
     width:8rem;
 }
+
+
 /*
 .hufflepuff{
     color:#ecb939 #f0c75e #726255 #372e29 #000000;
@@ -83,6 +85,13 @@ main{
     font-family: var(--font-family);
     display: flex;
     margin:0.5rem;
+
+    filter:grayscale(100%);
+    transition: filter 300ms;
+}
+
+.card:is(:hover, :focus){
+  filter: grayscale(0%)
 }
 
 .search{
