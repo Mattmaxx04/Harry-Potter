@@ -58,7 +58,7 @@ main {
   margin: 1rem;
   cursor: url(../assets/varita.png), auto;
   background: linear-gradient(to right, #44a08d, #093637);
-  min-height: 95vh;
+  min-height: 90vh;
   min-width: 96vw;
   padding: 1rem;
   display: flex;
@@ -186,12 +186,12 @@ footer h4{
 /*---------------not found animation-----------------*/
 .wrapper {
   font-size: 16px;
-  background-color: #5cbeff;
+  background-color: #646668;
   height: 31.25em;
   width: 31.25em;
   position: absolute;
   transform: translate(-50%, -50%);
-  top: 50%;
+  top: 60%;
   left: 50%;
   border-radius: 50%;
   box-shadow: inset 0 0 4em rgba(6, 31, 95, 0.2);
