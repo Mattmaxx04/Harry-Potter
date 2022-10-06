@@ -3,6 +3,17 @@ var URI = "https://hp-api.herokuapp.com/api/characters";
 let contenedor = document.getElementById("contenedor");
 let personajes = [];
 let formulario = document.querySelector("form");
+/*-------------to top------------------*/
+const toTop = document.querySelector(".btnup");
+
+window.addEventListener("scroll", () => {
+  if (window.pageYOffset > 100) {
+    toTop.classList.add("active");
+  } else {
+    toTop.classList.remove("active");
+  }
+})
+/*-------------fin to top------------------*/
 
 traerDatos(URI);
 
