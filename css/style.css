@@ -48,23 +48,6 @@ input[type=checkbox]:checked ~ .gryffindor{
 }
 
 
-/*
-.hufflepuff{
-    color:#ecb939 #f0c75e #726255 #372e29 #000000;
-}
-.ravenclaw{
-   color:#0E1A40 #222f5b #5d5d5d #946b2d #000000;
-}
-
-.slytherin{
-   color: #1a472a #2a623d #5d5d5d #aaaaaa #000000;
-}
-
-.gryffindor{
-    color:#740001 #AE0001 #eeba30 #d3a625 #000000;
-}
-*/
-
 p{
     font-family: var(--font-family);
 }
@@ -83,7 +66,7 @@ p{
 main{
     margin:1rem;
     cursor: url(../assets/varita.png), auto;
-    background-color:#53524e ;
+    background: linear-gradient(to right, #44a08d, #093637);
     min-height: 95vh;
     min-width: 96vw;   
     padding: 1rem;
@@ -92,32 +75,23 @@ main{
     align-items: center;
     border-radius: 0.5rem;
 }
+
 .card__container{
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 1rem;
     justify-content: center;
-    align-items: center;
+    margin-left: 8rem;
+    margin-top: 2rem;
     
-}
-.card__image{
-    width: 100%;
-    height: 30rem;
-    object-fit: cover;
 }
 
 .card{
     font-family: var(--font-family);
-    display: flex;
-    margin:0.5rem;
+   
 
-    filter:grayscale(100%);
-    transition: filter 300ms;
 }
 
-.card:is(:hover, :focus){
-  filter: grayscale(0%);
-}
 
 .search{
     margin:0.5rem;
@@ -155,6 +129,8 @@ label{
     margin:0.5rem;
     width:5rem;
 }
+
+/*---------------footer-------------------*/
 footer{
     background-color:#53524e ;
     min-height:5vh;
@@ -162,7 +138,7 @@ footer{
     cursor: url(../assets/varita.png), auto;
 }
 
-/*---------------not found-----------------*/
+/*---------------not found animation-----------------*/
 .wrapper {
     font-size: 16px;
     background-color: #5cbeff;
@@ -516,3 +492,77 @@ footer{
       font-size: 12px;
     }
   }
+
+  
+  /*-----------------------------*/
+  .card{
+    position:relative!important;
+    left:-2%!important;
+    width:15rem!important;
+    height:24rem!important;
+    transition: 0.3s ease-out!important;
+    box-shadow:0 3px 15px rgba(0, 0, 0, 0.4)!important;
+    }
+    
+    .card .imgbox{
+    position:relative;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    }
+    
+    
+    .card .imgbox img{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:90%;
+    display:block;
+    transition:0.5s;
+    }
+    
+    .card .content{
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:100%;
+    height:5rem;
+    padding: 12px;
+    background: #474244;
+    transition:all 0.5s cubic-bezier(.48, -0.28, 0.41, 1.4);
+    box-sizing: border-box;
+    overflow:hidden;
+    }
+    
+    .card:hover .content{
+    width:100%;
+    height:85%;
+    left:0;
+    bottom:0;
+    }
+    
+    .content p{
+   
+    transform: translateY(2em);
+    line-height:1.3em;
+    transition:0.3s;
+    
+    opacity:0;
+    }
+    
+    .card:hover .content p{
+    transform:translateY(0);
+    opacity:1;
+    }
+    
+    h2{
+    text-align:center;
+    }
+    
+    .card:hover {
+    box-shadow:0 0 5em rgba(0, 0, 0, 0.4)
+    }
+    
+

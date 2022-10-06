@@ -4,37 +4,6 @@ let contenedor = document.getElementById("contenedor");
 let personajes = [];
 let formulario = document.querySelector("form");
 
-/*
-const toggleTheme = document.getElementById('toggle-theme');
-const toggleIcon = document.getElementById('toggle-icon');
-const toggleText = document.getElementById('toggle-text');
-
-toggleTheme.addEventListener('click', () => {
-    document.body.classList.toggle('dark');
-    if(toggleIcon.src.includes('moon.svg')) {
-        toggleIcon.src = 'assets/icons/sun.svg';
-        toggleText.textContent = 'Light Mode';
-    } else {
-        toggleIcon.src = 'assets/icons/moon.svg';
-        toggleText.textContent = 'Dark Mode';
-    }
-});
-*/
-
-/*-------------funcion TOGGLE ESCUDOS------------------
-const toggleSly = document.getElementById("ravenclawToggle");
-const toggleIconSly = document.getElementById("toggleIconSly");
-
-toggleSly.addEventListener("click", () => {
-  if (toggleIconSly.src.includes("ravenclaw")) {
-    toggleIconSly.src = "./assets/ravglow.png";
-  } else {
-    toggleIconSly.src = "assets/ravenclaw.png";
-  }
-});*/
-
-/*------------- FIN funcion TOGGLE ESCUDOS------------------*/
-
 traerDatos(URI);
 
 /*-------------pintarcards------------------*/
@@ -55,19 +24,38 @@ function pintarCards(arrayPersonajes) {
       }
       console.log(personaje.image)
       let card = document.createElement("div");
-      card.className = "card p-0 bg-dark text-light";
+      card.className = "card text-light";
       card.style.width = "20rem";
-      card.innerHTML = `<img src="${imagen}" class="card-img-top card__image" alt="...">
-        <div class="card-body">
-          <h2 class="card-title">${personaje.name}</h2>
-          <h3 class="card-text">House:${personaje.house}</h3>          
-        </div>`;
+      card.innerHTML = `<div class="imgbox">
+      <img src="${imagen}" alt="...">
+    </div>
+
+      <div class="content">
+        <h4>${personaje.name}</h4>
+        <p> House:${personaje.house}</p>
+        <p> Specie:${personaje.species}</p>
+        <p> Actor:${personaje.actor}</p>
+        <p> Patronus:${personaje.patronus}</p>
+        <p> Wand:</p>
+        <ul>
+          <li>Wood:${personaje.wand.wood}</li>
+          <li>Core:${personaje.wand.core}</li>
+          <li>Length:${personaje.wand.length}</li>
+        </ul>
+       
+       
+      </div>
+    </div>`;
       contenedor.appendChild(card);
     });
   }
 }
 /*------------- FIN pintarcards------------------*/
-
+/*<img src="${imagen}" class="card-img-top card__image" alt="...">
+        <div class="card-body">
+          <h2 class="card-title">${personaje.name}</h2>
+          <h3 class="card-text">House:${personaje.house}</h3>          
+        </div>*/
 
 
 /*------------- Funcion Fetch------------------*/
