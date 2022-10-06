@@ -5,6 +5,7 @@
     --font-family:'Harry Potter', sans-serif;
 }
 body{
+    margin: 0;
     cursor: url(../assets/varita.png), auto;
 }
 .hufflepuff{
@@ -79,14 +80,16 @@ p{
 
 
 main{
+    margin:1rem;
     cursor: url(../assets/varita.png), auto;
     background-color:#53524e ;
     min-height: 95vh;
-    min-width: 100vw;   
+    min-width: 96vw;   
     padding: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-radius: 0.5rem;
 }
 .card__container{
     display: flex;
