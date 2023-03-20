@@ -11,4 +11,3 @@ _Cuenta con un buscador por texto, y un filtro por casas indicadas con sus respe
  [![](/assets/harry1.png)]()
  [![](assets/harry2.png)]()
  
-*Podés visitar [Harry-pottery](https://harry-pottery.netlify.app).*
